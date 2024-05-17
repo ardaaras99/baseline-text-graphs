@@ -24,19 +24,6 @@ class RawDataset:
     """
 
     def __init__(self, dataset_name: str) -> None:
-        """
-        Initializes the RawDataset class with the given dataset name.
-
-        Parameters:
-        ----------
-        dataset_name : str
-            Name of the dataset.
-
-        Raises:
-        ------
-        ValueError
-            If the dataset name is not valid.
-        """
         if dataset_name not in VALID_DATASETS:
             raise ValueError(
                 f"Invalid dataset name. Choose from {list(VALID_DATASETS.keys())}"
@@ -50,6 +37,7 @@ class RawDataset:
             print("Data already exists")
 
         self.read_data()
+        self.n_class: int = len(set(self.raw_labels))
 
     def read_data(self) -> None:
         """

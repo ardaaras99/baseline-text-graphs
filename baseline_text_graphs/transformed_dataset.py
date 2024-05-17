@@ -1,6 +1,5 @@
-from typing import List
-
 import torch
+from utils import ids_to_mask
 
 from baseline_text_graphs.raw_dataset import RawDataset
 
@@ -38,7 +37,3 @@ class TransformedDataset:
 
         self.label_encoder = LabelEncoder(self.raw_dataset.raw_labels)
         self.y = torch.tensor(self.label_encoder.y).reshape(-1, 1)
-
-
-def ids_to_mask(ids: List[int], total_size: int) -> torch.Tensor:
-    return torch.tensor([1 if i in ids else 0 for i in range(total_size)]).reshape(-1)
