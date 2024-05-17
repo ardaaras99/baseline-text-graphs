@@ -1,7 +1,7 @@
 import torch
-from utils import ids_to_mask
 
 from baseline_text_graphs.raw_dataset import RawDataset
+from baseline_text_graphs.utils import ids_to_mask
 
 
 class LabelEncoder:
