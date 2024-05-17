@@ -4,10 +4,7 @@ version = "0.1.0"
 description = "A package to transform raw GNN datasets in text classification domain."
 authors = ["Arda Can Aras <ardaaras99@gmail.com>"]
 readme = "README.md"
-packages = [
-    { include = "baseline_text_graphs", from = "." },
-    { include = "baseline_text_graphs.*", from = "." },
-]
+packages = [{ include = "baseline_text_graphs" }]
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.9"
