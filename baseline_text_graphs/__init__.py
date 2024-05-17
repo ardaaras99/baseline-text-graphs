@@ -3,6 +3,14 @@ from pathlib import Path
 # from baseline_text_graphs.raw_dataset import RawDataset
 # from baseline_text_graphs.transformed_dataset import TransformedDataset
 
+VALID_DATASETS = {
+    "mr": None,
+    "20ng": None,
+    "R8": None,
+    "R52": None,
+    "ohsumed": None,
+}
+
 PROJECT_PATH = Path.cwd()
 print("Project path: ", PROJECT_PATH)
 

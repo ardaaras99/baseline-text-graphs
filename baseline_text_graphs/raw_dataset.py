@@ -1,14 +1,21 @@
-from baseline_text_graphs import DATA_PATH, DOWNLOAD_LINK
+from baseline_text_graphs import DATA_PATH, DOWNLOAD_LINK, VALID_DATASETS
 from baseline_text_graphs.utils import download_and_unzip_file
 
 
 class RawDataset:
     def __init__(self, dataset_name) -> None:
-        self.dataset_name = dataset_name
+
+        if dataset_name not in VALID_DATASETS:
+            txt = f"Invalid dataset name. Choose from {list(VALID_DATASETS.keys())}"
+            raise ValueError(txt)
+        else:
+            self.dataset_name = dataset_name
+
         if DATA_PATH.joinpath("raw-data").exists():
             print("Data already exists")
         else:
             download_and_unzip_file(DOWNLOAD_LINK, DATA_PATH)
+
         self.read_data()
         self.calculate_statistics()
 

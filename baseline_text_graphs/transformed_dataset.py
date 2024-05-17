@@ -19,8 +19,7 @@ class LabelEncoder:
 
 
 class TransformedDataset:
-    def __init__(self, dataset_name) -> None:
-        # Input
+    def __init__(self, dataset_name: str) -> None:
         self.raw_dataset = RawDataset(dataset_name)
         self.docs = self.raw_dataset.docs
         self.n_class = self.raw_dataset.n_class
