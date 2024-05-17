@@ -1,0 +1,47 @@
+[tool.poetry]
+name = "baseline-text-graphs"
+version = "0.1.0"
+description = "A package to transform raw GNN datasets in text classification domain."
+authors = ["Arda Can Aras <ardaaras99@gmail.com>"]
+readme = "README.md"
+packages = [
+    { include = "baseline_text_graphs", from = "." },
+    { include = "baseline_text_graphs.*", from = "." },
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+torch = "^2.3.0"
+requests = "^2.31.0"
+gdown = "^5.2.0"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.26.0"
+ruff = "^0.1.9"
+
+[tool.ruff]
+line-length = 300
+
+[tool.ruff.format]
+# Like Black
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.ruff.lint]
+extend-select = [
+    "A",  # flake8-builtins
+    "B",  # flake8-bugbear
+    "S",  # flake8-bandit
+    "I",  # isort
+    "UP", # pyupgrade
+]
+
+[tool.ruff.lint.extend-per-file-ignores]
+"*" = ["S101", "S301", "S311"]
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
