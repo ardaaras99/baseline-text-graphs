@@ -12,11 +12,9 @@ VALID_DATASETS = {
 }
 
 PROJECT_PATH = Path.cwd()
-print("Project path: ", PROJECT_PATH)
 
 DATA_PATH = PROJECT_PATH.joinpath("data")
 DATA_PATH.mkdir(parents=True, exist_ok=True)
-print("Data path: ", DATA_PATH)
 
 # TRANSFORMED_DATA_PATH = PROJECT_PATH.joinpath("data/transformed-data")
 # TRANSFORMED_DATA_PATH.mkdir(parents=True, exist_ok=True)
