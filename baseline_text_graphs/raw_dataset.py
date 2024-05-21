@@ -34,7 +34,8 @@ class RawDataset:
         if not DATA_PATH.joinpath("raw-data").exists():
             download_and_unzip_file(DOWNLOAD_LINK, DATA_PATH)
         else:
-            print("Data already exists")
+            # print("Data already exists")
+            pass
 
         self.read_data()
         self.n_class: int = len(set(self.raw_labels))
